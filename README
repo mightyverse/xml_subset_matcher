@@ -1,0 +1,18 @@
+The library works, but not as a gem.  Here's what happens when I build the gem and try to run from irb:
+
+    master $ gem build xmlsubsetmatcher.gemspec
+    WARNING:  no rubyforge_project specified
+    WARNING:  description and summary are identical
+    Successfully built RubyGem
+    Name: xmlsubsetmatcher
+    Version: 0.0.3
+    File: xmlsubsetmatcher-0.0.3.gem
+    master $ irb
+    >> require 'rubygems'
+    => false
+    >> require 'xmlsubsetmatcher'
+    LoadError: no such file to load -- xmlsubsetmatcher
+        from /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+        from /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+        from (irb):2
+    >> 
