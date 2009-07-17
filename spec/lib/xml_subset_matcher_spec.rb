@@ -1,5 +1,5 @@
 # (c) 2009 Mightyverse, Inc.  Use is subject to license terms.
-require File.dirname(__FILE__) + '/../spec_helper'
+require File.dirname(__FILE__) + '/../../lib/xml_subset_matcher'
 require 'nokogiri'
 
 describe 'XmlSubsetMatcher' do

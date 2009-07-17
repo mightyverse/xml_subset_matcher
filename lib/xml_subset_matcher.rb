@@ -1,5 +1,7 @@
 # (c) 2009 Mightyverse, Inc.  Use is subject to license terms.
-module CustomMatchers
+require 'Nokogiri'
+
+module XmlSubsetMatcher
 
   class XmlSubsetMatcher
     def initialize(superset)
