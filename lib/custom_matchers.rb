@@ -1,11 +1,10 @@
 # (c) 2009 Mightyverse, Inc.  Use is subject to license terms.
 require 'nokogiri'
-
-module XmlSubsetMatcher
+module CustomMatchers
 
   class XmlSubsetMatcher
     def initialize(superset)
-      @superset = Nokogiri::XML(superset, nil, "UTF-8", Nokogiri::XML::ParseOptions.new.recover.nsclean) # see nokogiri-1.3.2/test/xml/test_parse_options.rb
+      @superset = Nokogiri::XML(superset, nil, "UTF-8", Nokogiri::XML::ParseOptions.new.recover.nsclean)
       @error = ''
     end
     def matches?(subset)

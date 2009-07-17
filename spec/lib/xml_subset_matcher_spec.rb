@@ -1,5 +1,6 @@
 # (c) 2009 Mightyverse, Inc.  Use is subject to license terms.
 require File.dirname(__FILE__) + '/../../lib/xml_subset_matcher'
+require File.dirname(__FILE__) + '/../spec_helper'
 require 'nokogiri'
 
 describe 'XmlSubsetMatcher' do
@@ -121,7 +122,7 @@ describe 'XmlSubsetMatcher' do
       <phrase>
         <text>Source</text>
         <text>Something</text>
-        <text /> <text>extra</text>   
+        <text /> <text>extra</text>
       </phrase>
     EOS
     subset.should be_xml_subset_of(superset)
@@ -186,3 +187,4 @@ describe 'XmlSubsetMatcher' do
       subset.should be_xml_subset_of(superset)
   end
 end
+
