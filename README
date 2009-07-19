@@ -3,8 +3,6 @@ Sarah Allen, http://github.com/ultrasaurus
 Wolfram Arnold, http://github.com/wolframarnold 
 Nikolay, http://github.com/jastix
 
-In progress: I've used this library inside of Rails (see cucumber_xml project) but I'm tyring to learn how to make it a stand-alone gem that can be used independently from Rails.
-
 Build and install the gem:
   gem build xml_subset_matcher.gemspec
   sudo gem install xml_subset_matcher
