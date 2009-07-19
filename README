@@ -1,8 +1,19 @@
-In progress: I've used this library inside of Rails (see cucumber_xml project) but I'm tyring to learn how to make it a stand-alone gem that can be used independently from Rails.
-gem build xml_subset_matcher.gemspec
-sudo gem install xml_subset_matcher
+Contributors:
+Sarah Allen, http://github.com/ultrasaurus
+Wolfram Arnold, http://github.com/wolframarnold 
+Nikolay, http://github.com/jastix
 
-master $ irb
+In progress: I've used this library inside of Rails (see cucumber_xml project) but I'm tyring to learn how to make it a stand-alone gem that can be used independently from Rails.
+
+Build and install the gem:
+  gem build xml_subset_matcher.gemspec
+  sudo gem install xml_subset_matcher
+
+run the specs (all pass)
+  spec spec/lib/xml_subset_matcher_spec.rb
+
+using the library
+$ irb
 >> require 'xml_subset_matcher'
 => true
 >> subset = "<root><thing>text</thing></root>"
@@ -10,9 +21,15 @@ master $ irb
 >> superset = "<root extra='stuff'><ignorethis/><thing>text</thing></root>"
 => "<root extra='stuff'><ignorethis/><thing>text</thing></root>"
 >> x = XmlSubsetMatcher::XmlSubsetMatcher.new(superset)
-NameError: uninitialized constant Nokogiri::XML::PARSE_RECOVER
-	from /Library/Ruby/Gems/1.8/gems/xml_subset_matcher-0.0.4/lib/xml_subset_matcher.rb:8:in `initialize'
-	from (irb):2:in `new'
-	from (irb):2
-
-weird... I changed the library to require Nokogiri, but that didn't seem to help
+=> #<XmlSubsetMatcher::XmlSubsetMatcher:0x55a514 @error="", @superset=<?xml version="1.0" encoding="UTF-8"?>
+<root extra="stuff">
+  <ignorethis/>
+  <thing>text</thing>
+</root>
+>
+>> x.matches?(subset)
+=> true
+>> subset = "<something>else</something>"
+=> "<something>else</something>"
+>> x.matches?(subset)
+=> false

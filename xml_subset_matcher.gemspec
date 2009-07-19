@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{xml_subset_matcher}
-  s.version = "0.0.4"
+  s.version = "0.0.5"
   s.date = %q{2009-07-13}
   s.authors = ["Wolfram Arnold, Sarah Allen"]
   s.email = %q{wolfram@rubyfocus.biz, sarah@ultrasaurus.com}
